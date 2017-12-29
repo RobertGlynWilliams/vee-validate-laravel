@@ -25,10 +25,9 @@ export default {
             }
         };
 
+        Vue.prototype.$laravelData = {};
         if(options) {
             Vue.prototype.$laravelData = options;
-        } else {
-            Vue.prototype.$laravelData = {};
         }
     }
 };
