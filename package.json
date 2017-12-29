@@ -1,0 +1,32 @@
+{
+  "name": "vee-validate-laravel",
+  "version": "1.0.0",
+  "description": "Adds simple laravel form validation support to vee-validate",
+  "main": "dist/vee-validate-laravel.js",
+  "scripts": {
+    "build": "babel-node build"
+  },
+  "keywords": [],
+  "author": "Robert Williams",
+  "license": "MIT",
+  "types": "types/index.d.ts",
+  "files": [
+    "dist/*.js",
+    "types/*.d.ts"
+  ],
+  "peerDependencies": {
+    "vue": "^2.0.0",
+    "vee-validate": "^2.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "chalk": "^2.3.0",
+    "rollup": "^0.53.1",
+    "rollup-plugin-buble": "^0.18.0",
+    "rollup-plugin-commonjs": "^8.2.6",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "uglify-js": "^3.3.3"
+  },
+  "dependencies": {}
+}
