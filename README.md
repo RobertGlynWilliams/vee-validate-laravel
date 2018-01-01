@@ -1,5 +1,5 @@
 # Vee Validate for Laravel backend validation
-Extension of vee-validate to support Laravel backend validation
+Simple vue js plugin that makes it easier to show validation errors from Laravel validation by using vee-validate.
 
 ### Getting Started
 
@@ -15,13 +15,47 @@ Vue.use(VeeValidateLaravel);
 
 ```
 
-In Vue classes:
+From Laravel:
 
-```javascript
+```php
 
-axios.post('/example', data).then(res => {
-}).catch(err => {
-    this.$setLaravelValidationErrorsFromResponse(err.response.data);
-});
+$request->validate([
+    'name' => 'required|min:3|max:255'
+]);
+
 
 ```
+
+
+In Vue classes:
+
+
+```vue
+
+<template>
+    <div class="form-group" v-bind:class="{'has-error' : errors.has('name')}">
+        <label for="name">Name</label>
+        <input 
+            type="text" 
+            name="name"
+            class="form-control"
+            v-validate="'required'" />
+        <div v-show="errors.has('name')" class="help-block">{{ errors.first('name') }}</div>
+    </div>
+</template>
+
+<script>
+    export default {
+        methods: {
+            doValidation() {
+                axios.post('/example', data).then(res => {
+                }).catch(err => {
+                    this.$setLaravelValidationErrorsFromResponse(err.response.data);
+                });
+            }
+        }
+    }
+</script>
+
+```
+
