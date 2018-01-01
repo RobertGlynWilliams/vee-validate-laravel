@@ -39,6 +39,7 @@ In Vue classes:
             type="text" 
             name="name"
             class="form-control"
+            v-model="name"
             v-validate="'required'" />
         <div v-show="errors.has('name')" class="help-block">{{ errors.first('name') }}</div>
     </div>
@@ -48,6 +49,10 @@ In Vue classes:
     export default {
         methods: {
             doValidation() {
+                const data = {
+                    name: this.name
+                };
+            
                 axios.post('/example', data).then(res => {
                 }).catch(err => {
                     this.$setLaravelValidationErrorsFromResponse(err.response.data);
