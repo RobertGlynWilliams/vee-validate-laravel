@@ -21,7 +21,7 @@ export default {
                 let field = errorFields[i];
 
                 let errorString = errorResponse.errors[field].join(', ');
-                this.$validator.errors.add(field, errorString);
+                this.$validator.errors.add({ field: field, msg: errorString });
             }
         };
 

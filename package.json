@@ -1,6 +1,6 @@
 {
   "name": "vee-validate-laravel",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Adds simple laravel form validation support to vee-validate",
   "main": "dist/vee-validate-laravel.js",
   "scripts": {
