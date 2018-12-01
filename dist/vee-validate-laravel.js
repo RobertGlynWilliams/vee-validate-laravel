@@ -32,7 +32,7 @@ var veeValidateLaravel = {
                 var field = errorFields[i];
 
                 var errorString = errorResponse.errors[field].join(', ');
-                this$1.$validator.errors.add(field, errorString);
+                this.$validator.errors.add({ field: field, msg: errorString });
             }
         };
 
