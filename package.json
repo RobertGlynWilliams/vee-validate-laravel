@@ -16,7 +16,7 @@
   ],
   "peerDependencies": {
     "vue": "^2.0.0",
-    "vee-validate": "^2.0.0"
+    "vee-validate": "^2.1.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

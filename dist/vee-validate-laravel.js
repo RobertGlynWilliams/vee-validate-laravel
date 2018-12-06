@@ -1,5 +1,5 @@
 /**
-* vee-validate-laravel v1.0.0
+* vee-validate-laravel v1.0.1
 */
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
@@ -32,14 +32,13 @@ var veeValidateLaravel = {
                 var field = errorFields[i];
 
                 var errorString = errorResponse.errors[field].join(', ');
-                this$1.$validator.errors.add(field, errorString);
+                this$1.$validator.errors.add({ field: field, msg: errorString });
             }
         };
 
-        if(options) {
+        Vue.prototype.$laravelData = {};
+        if (options) {
             Vue.prototype.$laravelData = options;
-        } else {
-            Vue.prototype.$laravelData = {};
         }
     }
 };
