@@ -55,7 +55,7 @@ In Vue classes:
             
                 axios.post('/example', data).then(res => {
                 }).catch(err => {
-                    this.$setLaravelValidationErrorsFromResponse(err.response.data);
+                    this.$setLaravelValidationErrorsFromResponse({ errors: err.response.data });
                 });
             }
         }
